@@ -1,49 +1,41 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
         <title>Exercice Javascript</title>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="js.js"></script>
-
-        <style>
-            table{
-                width: 90%;
-                margin: 0 5%;
-                border-collapse: collapse;
-            }
-            th, td{
-                border: solid thin gray;
-                text-align: left;
-                padding: 2px 10px;
-            }
-
-            .title{
-                width: 100%;
-                font-size: 18px;
-                text-align: center;
-                padding: 0 0 10px 0;
-            }
-        </style>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body onload="init()">
-        <div class="title">Exercice de Javascript</div>
-        <input id="filterword" type="text" onkeyup="filterTableau()" width="100%" placeholder="Filter"/>
-        <table id="tableContacts">
-        </table>
+		<nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 h1">Zakaria FAHRAOUI</span>
+
+            <form class="form-inline" onkeyup="filterTableau()">
+                <input class="form-control mr-sm-2" type="text" placeholder="Recherche"  id="filterword" name="filterword">
+              </form>
+        </nav>
+     
+		 <div class="container p-5">
             
-            <button onclick="AjouterContact()">Ajouter contact</button>
-            <button onclick="AjouterOrganisation()">Ajouter</button>
-            <div hidden>
-                <label for="nom">Id organisation</label><br>
-                <input type="text" id="idorganisation">
-                <label for="nom">Nom organisation</label><br>
-                <input type="text" id="nomOrganisation">
-                <label for="nom">Nombre employées</label><br>
-                <input type="text" id="nbEmploye">
-                <label for="nom">Type (Société / Association)</label><br>
-                <input type="text" id="type">
+            <h1 class="text-center mb-5"> Exercice de Javascript </h1>
+
+            <div class="spinner"></div>
+
+            <table class="table" id="tableContacts">
+            </table>
+            <div class="form-inline">
+                <input type="text" id="idorganisation" placeholder="Id organisation" class="form-control mr-sm-2" required>
+                <input type="text" id="nomOrganisation" placeholder="Nom organisation" class="form-control mr-sm-2" required>
+                <input type="text" id="nbEmploye" placeholder="Nombre employées" class="form-control mr-sm-2" required>
+                <input type="text" id="type" placeholder="Type (Société / Association)" class="form-control mr-sm-2" required>
+				<button onclick='ajouterOrganisation();' class='btn btn-warning'>Ajouter organisation</button>
             </div>
-            
+        </div>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="index.js"></script>
     </body>
 </html>
